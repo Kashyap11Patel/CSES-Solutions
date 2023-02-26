@@ -3,7 +3,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-// here we use set for the distinct number
+// here we use set for the store distinct numbers
 
 int main() {
 
