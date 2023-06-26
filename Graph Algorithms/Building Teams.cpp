@@ -63,14 +63,14 @@ int main() {
         g[b].push_back(a);
     }
 
-    vector<bool> vis(n);
+    vector<int> vis(n);
 
     function <bool(int)> dfs;
     dfs = [&] (int v) {
         bool ans = true;
         for (int c : g[v]) {
             if (!vis[c]) {
-                vis[c] = vis[v] ^ 1 ^ 2;
+                vis[c] = (vis[v] ^ 1 ^ 2);
                 ans &= dfs(c);
             } else {
                 if (vis[c] == vis[v]) return false;
@@ -90,7 +90,7 @@ int main() {
     if (isPoss) {
         for (auto i : vis) cout << i << ' ';
     } else {
-        cout << "IMPOSSBILE";
+        cout << "IMPOSSIBLE";
     }
     // TC : O(n + m);
     // SC : O(n + m);
